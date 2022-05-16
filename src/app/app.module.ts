@@ -7,7 +7,7 @@ import {AppComponent} from './app.component';
 import {UsersComponent} from './components/users/users.component';
 import {UserComponent} from './components/user/user.component';
 import {UserDetailsComponent} from './components/userDetails/userDetails.component';
-import { HomeComponent } from './components/home/home.component';
+import {HomeComponent} from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -21,12 +21,13 @@ import { HomeComponent } from './components/home/home.component';
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot([
+      {path: '', redirectTo: 'homePage', pathMatch: 'full'},
       {path: 'homePage', component: HomeComponent},
       {
         path: 'usersPage', component: UsersComponent,
-          children:[
-            {path:'userDetailsPage/:id', component: UserDetailsComponent}
-          ]
+        children: [
+          {path: 'userDetailsPage/:id', component: UserDetailsComponent}
+        ]
       },
 
       // {path: 'userDetailsPage/:id', component: UserDetailsComponent}

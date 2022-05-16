@@ -1,6 +1,7 @@
 <h2>
   {{user.id}} -- {{user.name}}
 <!--  <button><a routerLink="userDetailsPage/{{user.id}}">user details</a></button>-->
-  <button><a [routerLink]="['userDetailsPage', user.id]">user details</a></button>
+<!--  <button><a [routerLink]="['userDetailsPage', user.id]" [state]="{data: user}">user details</a></button>-->
+  <button (click)="navigateMe(user)">user details</button>
 </h2>
 

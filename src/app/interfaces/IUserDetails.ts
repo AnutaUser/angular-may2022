@@ -3,8 +3,6 @@ import {ICompany} from "./ICompany";
 import {IUser} from "./IUser";
 
 export interface IUserDetails extends IUser {
-  id: number,
-  name: string,
   username: string,
   email: string,
   address: IAddress,
