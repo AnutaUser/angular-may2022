@@ -1,1 +1,4 @@
-<p>post works!</p>
+<div class="post">
+  <div>{{post.id}}.) {{post.title}}</div>
+  <button routerLinkActive="active"><a routerLink="{{post.id}}" [state]="{post}">DETAILS</a></button>
+</div>

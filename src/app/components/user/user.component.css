@@ -20,3 +20,7 @@ a {
   color: whitesmoke;
   font-size: 18px;
 }
+
+.active a {
+  color: violet;
+}

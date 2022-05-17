@@ -1,1 +1,6 @@
-<p>comment works!</p>
+<div>
+  <p>
+    {{comment.id}}.) {{comment.name}}
+    <button><a routerLink="{{comment.id}}" [state]="{comment}">details</a></button>
+  </p>
+</div>

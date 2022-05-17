@@ -1,0 +1,20 @@
+.post {
+  border: 2px solid rebeccapurple;
+  width: 250px;
+  padding: 5px;
+  text-align: center;
+}
+
+button {
+  background: rebeccapurple;
+  width: 98%;
+}
+
+a {
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+.active a{
+  color: violet;
+}
