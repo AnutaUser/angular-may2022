@@ -1,0 +1,13 @@
+.user {
+  border: 2px solid rgba(112, 205, 124, 0.69);
+  width: 95vh;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+button {
+  height: 30px;
+  width: 100px;
+  margin-top: 13px;
+}
