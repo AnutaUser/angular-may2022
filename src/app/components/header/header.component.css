@@ -1,0 +1,17 @@
+.header {
+  min-height: 50px;
+  background: darkblue;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  font-size: 30px;
+  color: yellow;
+}
+
+.active {
+  color: rgba(229, 239, 122, 0.69);
+}
