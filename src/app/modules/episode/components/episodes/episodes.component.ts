@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute} from "@angular/router";
+
+import {IEpisode} from "../../interfaces";
 
 @Component({
   selector: 'app-episodes',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EpisodesComponent implements OnInit {
 
-  constructor() { }
+  episodes: IEpisode[];
 
-  ngOnInit(): void {
+  constructor(private activatedRoute: ActivatedRoute) {
   }
 
+  ngOnInit(): void {
+    this.activatedRoute.data.subscribe(({data}) => {
+        const {results} = data;
+        this.episodes = results;
+      }
+    );
+
+  }
 }

@@ -1,1 +1,20 @@
-<p>character-details works!</p>
+<div class="characterDetail">
+  <img src="{{characterDetails.image}}" alt="">
+  <h1>{{characterDetails.name}}</h1>
+  <p>{{characterDetails.status}} - {{characterDetails.species}}</p>
+  <p>{{characterDetails.type}}</p>
+  <p>{{characterDetails.gender}}</p>
+  <p>Origin: </p>
+  <p>{{characterDetails.origin.name}}</p>
+  <p><a href="{{characterDetails.origin.url}}">{{characterDetails.origin.url}}</a></p>
+  <p>Location:</p>
+  <p>{{characterDetails.location.name}}</p>
+  <p><a href="{{characterDetails.location.url}}">{{characterDetails.location.url}}</a></p>
+  <p>Episode:</p>
+  <p>
+    {{characterDetails.episode}}
+  </p>
+  <p>URL: <a href="{{characterDetails.url}}">{{characterDetails.url}}</a></p>
+  <p>Created: {{characterDetails.created}}</p>
+</div>
+

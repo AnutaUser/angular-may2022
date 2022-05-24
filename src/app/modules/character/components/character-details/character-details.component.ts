@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute, Router} from "@angular/router";
+
+import {ICharacter} from "../../interfaces";
 
 @Component({
   selector: 'app-character-details',
@@ -7,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CharacterDetailsComponent implements OnInit {
 
-  constructor() { }
+  characterDetails: ICharacter;
+
+  constructor(private activatedRoute: ActivatedRoute) {
+  }
 
   ngOnInit(): void {
+      this.activatedRoute.data.subscribe(({characterData}) => this.characterDetails = characterData);
   }
 
 }

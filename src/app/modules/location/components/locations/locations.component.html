@@ -1,1 +1,6 @@
-<p>locations works!</p>
+<div class="episodes">
+  <div>
+    <app-location *ngFor="let location of locations" [location]="location"></app-location>
+  </div>
+  <router-outlet></router-outlet>
+</div>

@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {HttpClientModule} from "@angular/common/http";
 
 import { LocationRoutingModule } from './location-routing.module';
 import { LocationsComponent } from './components/locations/locations.component';
 import { LocationComponent } from './components/location/location.component';
 import { LocationDetailsComponent } from './components/location-details/location-details.component';
+import { LocationResolver, LocationService, LocationsResolver } from "./services";
 
 
 @NgModule({
@@ -15,8 +17,9 @@ import { LocationDetailsComponent } from './components/location-details/location
   ],
   imports: [
     CommonModule,
-    LocationRoutingModule
+    LocationRoutingModule,
+    HttpClientModule
   ],
-  providers: []
+  providers: [LocationService, LocationResolver, LocationsResolver]
 })
 export class LocationModule { }

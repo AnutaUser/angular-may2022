@@ -1,0 +1,21 @@
+.characterDetail {
+  background: #3C3E44;
+  color: ghostwhite;
+}
+
+img {
+  width: 500px;
+  margin-left: 70vh;
+  margin-top: 50px;
+}
+
+a {
+  text-decoration: none;
+  color: ghostwhite;
+}
+p{
+  text-align: center;
+}
+h1 {
+  text-align: center;
+}

@@ -1,9 +1,24 @@
 .character{
-  border: 2px solid darkblue;
-  margin-top: 10px;
+  background: #3C3E44;
+  display: flex;
+  width: 600px;
+  height: 220px;
+  border-radius: 10px;
+  color: ghostwhite;
 }
 
 a {
   text-decoration: none;
-  font-size: 20px;
+  font-size: 30px;
+  color: ghostwhite;
 }
+img {
+  width: 229px;
+  height: 220px;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  margin-right: 10px;
+}
+ p {
+   color: #9B958D;
+ }

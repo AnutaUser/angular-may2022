@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {LocationService} from "../../services";
+import {ActivatedRoute, Router} from "@angular/router";
+import {ILocation} from "../../interfaces";
 
 @Component({
   selector: 'app-location-details',
@@ -7,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LocationDetailsComponent implements OnInit {
 
-  constructor() { }
+  locationDetails: ILocation;
+  constructor(private activatedRoute: ActivatedRoute) {
+  }
 
   ngOnInit(): void {
+    this.activatedRoute.data.subscribe(({data}) => this.locationDetails = data)
+    console.log(this.locationDetails.residents.map(res =>{
+      console.log(res)
+    }))
   }
 
 }

@@ -1,1 +1,6 @@
-<p>episodes works!</p>
+<div class="episodes">
+  <div>
+    <app-episode *ngFor="let episode of episodes" [episode]="episode"></app-episode>
+  </div>
+  <router-outlet></router-outlet>
+</div>
