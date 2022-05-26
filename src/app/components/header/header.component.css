@@ -1,0 +1,16 @@
+.header {
+  height: 50px;
+  background: springgreen;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+a {
+  font-size: 26px;
+  text-decoration: none;
+}
+
+.active {
+  color: darkgreen;
+}
