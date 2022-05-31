@@ -11,8 +11,7 @@ const routes: Routes = [
     path: '', component: MainLayoutComponent, children: [
       {path: '', redirectTo: 'home', pathMatch: 'full'},
       {path: 'home', component: HomeComponent},
-      {path: 'movies', loadChildren: () => import('./modules').then(value => value.MovieModule)},
-      {path: 'genres', loadChildren:()=> import('./modules').then(value => value.GenreModule)}
+      {path: 'movies', loadChildren: () => import('./modules').then(value => value.MovieModule)}
     ]
 
   }

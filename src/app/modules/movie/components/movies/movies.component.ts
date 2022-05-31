@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+
+import {MovieService} from "../../services";
+import {IMovie} from "../../interfaces";
+import {MoviesResolver} from "../../services/resolvers/movies.resolver";
+import {ActivatedRoute} from "@angular/router";
+
 
 @Component({
   selector: 'app-movies',
@@ -7,9 +13,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MoviesComponent implements OnInit {
 
-  constructor() { }
+  movies: IMovie[];
+
+  constructor(private activatedRoute: ActivatedRoute) {
+  }
 
   ngOnInit(): void {
+    this.activatedRoute.data.subscribe(({data}) => {
+      const {results} = data;
+      this.movies = results;
+    })
+
   }
 
 }

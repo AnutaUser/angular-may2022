@@ -1,1 +1,7 @@
-<p>movies works!</p>
+<div class="movies">
+  <app-movie *ngFor="let movie of movies" [movie]="movie"></app-movie>
+</div>
+<div class="button">
+  <button>next</button>
+  <button>prev</button>
+</div>
