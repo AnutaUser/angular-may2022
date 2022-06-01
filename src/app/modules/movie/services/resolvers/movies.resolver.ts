@@ -18,8 +18,8 @@ export class MoviesResolver implements Resolve<IMovie[]> {
   }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<IMovie[]> | Promise<IMovie[]> | IMovie[] {
-    return this.movieService.getAll();
+    const {page} = route.queryParams;
+    return this.movieService.getAll(page || 1);
   }
-
 
 }

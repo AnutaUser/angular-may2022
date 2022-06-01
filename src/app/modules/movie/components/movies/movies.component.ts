@@ -14,6 +14,7 @@ import {ActivatedRoute} from "@angular/router";
 export class MoviesComponent implements OnInit {
 
   movies: IMovie[];
+  page: number;
 
   constructor(private activatedRoute: ActivatedRoute) {
   }
