@@ -12,13 +12,18 @@ import {MovieService} from "./services";
 import {MoviesResolver} from "./services/resolvers/movies.resolver";
 import {MovieResolver} from "./services/resolvers/movie.resolver";
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
+import {GenresComponent} from "./components/genres/genres.component";
+import {GenreService} from "./services/genre.service";
+import {GenreComponent} from "./components/genre/genre.component";
 
 
 @NgModule({
   declarations: [
     MoviesComponent,
     MovieComponent,
-    MovieDetailsComponent
+    MovieDetailsComponent,
+    GenresComponent,
+    GenreComponent
   ],
   imports: [
     CommonModule,
@@ -36,7 +41,8 @@ import { MovieDetailsComponent } from './components/movie-details/movie-details.
     },
     MovieService,
     MoviesResolver,
-    MovieResolver
+    MovieResolver,
+    GenreService
   ]
 })
 export class MovieModule { }

@@ -1,9 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-
-import {MovieService} from "../../services";
-import {IMovie} from "../../interfaces";
-import {MoviesResolver} from "../../services/resolvers/movies.resolver";
 import {ActivatedRoute} from "@angular/router";
+
+import {IMovie} from "../../interfaces";
 
 
 @Component({
@@ -14,17 +12,28 @@ import {ActivatedRoute} from "@angular/router";
 export class MoviesComponent implements OnInit {
 
   movies: IMovie[];
-  page: number;
+  currentPage: number;
 
   constructor(private activatedRoute: ActivatedRoute) {
   }
 
   ngOnInit(): void {
+
     this.activatedRoute.data.subscribe(({data}) => {
       const {results} = data;
       this.movies = results;
     })
+  }
 
+  nextPage(num: number) {
+    this.currentPage = num;
+    console.log('current1' + this.currentPage)
+    this.activatedRoute.queryParams.subscribe(({page}) => {
+      page++;
+      console.log('num'+ num);
+      console.log('page' + page);
+
+    })
   }
 
 }
