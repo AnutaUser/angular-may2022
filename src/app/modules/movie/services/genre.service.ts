@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
+
 import {IGenre} from "../interfaces";
 import {urls} from "../../../constants";
 
@@ -13,6 +14,6 @@ export class GenreService {
   }
 
   getAll(): Observable<IGenre[]> {
-    return this.httpClient.get<IGenre[]>(urls.genre);
+    return this.httpClient.get<IGenre[]>(urls.genres);
   }
 }
