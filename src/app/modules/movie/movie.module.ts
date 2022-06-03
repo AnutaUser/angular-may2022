@@ -15,6 +15,8 @@ import { MovieDetailsComponent } from './components/movie-details/movie-details.
 import {GenresComponent} from "./components/genres/genres.component";
 import {GenreService} from "./services/genre.service";
 import {GenreComponent} from "./components/genre/genre.component";
+import {NgbRatingModule} from "@ng-bootstrap/ng-bootstrap";
+import { RatingComponent } from './components/rating/rating.component';
 
 
 @NgModule({
@@ -23,16 +25,19 @@ import {GenreComponent} from "./components/genre/genre.component";
     MovieComponent,
     MovieDetailsComponent,
     GenresComponent,
-    GenreComponent
+    GenreComponent,
+    RatingComponent,
+    RatingComponent
   ],
-  imports: [
-    CommonModule,
-    MovieRoutingModule,
-    HttpClientModule,
-    NgxStarRatingModule,
-    ReactiveFormsModule,
-    FormsModule
-  ],
+    imports: [
+        CommonModule,
+        MovieRoutingModule,
+        HttpClientModule,
+        NgxStarRatingModule,
+        ReactiveFormsModule,
+        FormsModule,
+        NgbRatingModule
+    ],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,

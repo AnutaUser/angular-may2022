@@ -4,6 +4,7 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  color: #f1ecec;
 }
 
 a {
@@ -13,5 +14,22 @@ a {
 }
 
 .active {
-color: #f1ecec;
+  color: #f1ecec;
+}
+
+.user {
+  width: 30px;
+  height: 30px;
+  background: coral;
+  border: 1px solid #f1ecec;
+  color: #f1ecec;
+  border-radius: 50%;
+  text-align: center;
+  margin-left: 5px;
+}
+
+.hallo {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
