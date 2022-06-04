@@ -38,11 +38,11 @@ export class MoviesComponent implements OnInit {
       {queryParams: {page: this.currentPage + 1}},
     );
     this.activatedRoute.data.subscribe(({data}) => {
-      const {results} = data;
-      const {page} = results;
-      this.movies = results && page;
+      const {results, page} = data;
+
+        console.log(data)
     })
-    // console.log(movies)
+
   }
 
   prevPage() {
