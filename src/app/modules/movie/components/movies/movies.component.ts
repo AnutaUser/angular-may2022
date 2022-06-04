@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 
 import {IMovie} from "../../interfaces";
+import {query} from "@angular/animations";
 
 
 @Component({
@@ -14,7 +15,7 @@ export class MoviesComponent implements OnInit {
   movies: IMovie[];
   currentPage: number;
 
-  constructor(private activatedRoute: ActivatedRoute) {
+  constructor(private activatedRoute: ActivatedRoute, private router: Router) {
   }
 
   ngOnInit(): void {
@@ -22,18 +23,33 @@ export class MoviesComponent implements OnInit {
     this.activatedRoute.data.subscribe(({data}) => {
       const {results} = data;
       this.movies = results;
+    });
+
+    this.activatedRoute.queryParamMap.subscribe(params => {
+      let page = params.get('page') || 1;
+      this.currentPage = +page;
+
     })
   }
 
   nextPage(num: number) {
-    this.currentPage = num;
-    console.log('current1' + this.currentPage)
-    this.activatedRoute.queryParams.subscribe(({page}) => {
-      page++;
-      console.log('num'+ num);
-      console.log('page' + page);
-
+    this.router.navigate(
+      ['/movies'],
+      {queryParams: {page: this.currentPage + 1}},
+    );
+    this.activatedRoute.data.subscribe(({data}) => {
+      const {results} = data;
+      const {page} = results;
+      this.movies = results && page;
     })
+    // console.log(movies)
+  }
+
+  prevPage() {
+    this.router.navigate(
+      ['/movies'],
+      {queryParams: {page: this.currentPage - 1}}
+    );
   }
 
 }

@@ -21,7 +21,7 @@ export class RatingComponent implements OnInit {
       this.movies = results;
       this.movies.map(movie => {
         const popularity = movie.popularity * 0.001;
-        console.log(movie.popularity)
+        // console.log(movie.popularity)
         const id = movie.id;
         if (popularity) {
 
