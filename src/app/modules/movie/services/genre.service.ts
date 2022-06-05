@@ -13,7 +13,7 @@ export class GenreService {
   constructor(private httpClient: HttpClient) {
   }
 
-  getAll(): Observable<{genres: IGenre[]}> {
-    return this.httpClient.get<{genres: IGenre[]}>(urls.genres);
+  getAll(): Observable<{ genres: IGenre[] }> {
+    return this.httpClient.get<{ genres: IGenre[] }>(urls.genres);
   }
 }
